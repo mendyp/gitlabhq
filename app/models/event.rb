@@ -189,7 +189,7 @@ class Event < ActiveRecord::Base
   end
 
   def valid_push?
-    data[:ref]
+    data[:ref] && ref_name.present?
   rescue => ex
     false
   end
